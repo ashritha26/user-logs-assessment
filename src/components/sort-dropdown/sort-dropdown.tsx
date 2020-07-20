@@ -15,6 +15,10 @@ const StyledSortDropDown = styled.div`
     margin-right: 15%;
 `;
 
+const StyledOrderLabel = styled.label`
+    padding-left: 0.5rem;
+`;
+
 const SortByDropdown: React.FC<IProps> = ({ handleSortChange, sortByType, handleSortByChange, sortByOrder }: IProps) => {
     return (
         <StyledSortDropDown>
@@ -26,7 +30,7 @@ const SortByDropdown: React.FC<IProps> = ({ handleSortChange, sortByType, handle
                 })}
             </select>
 
-            <label>Order: </label>
+            <StyledOrderLabel>Order: </StyledOrderLabel>
             
             <select name="sortby" id="sortby" onChange={handleSortByChange} value={sortByOrder}>
                 { SORT_DROPDOWN_ORDER.map((option: any, index: number) => {
